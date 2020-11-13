@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MyCompose</string>
+
+    <string name="main_tab_home" translatable="false">Home</string>
+    <string name="main_tab_review" translatable="false">Review</string>
+    <string name="main_tab_pocket" translatable="false">Pocket</string>
+    <string name="main_tab_report" translatable="false">Report</string>
+    <string name="main_tab_more" translatable="false">More</string>
 </resources>
