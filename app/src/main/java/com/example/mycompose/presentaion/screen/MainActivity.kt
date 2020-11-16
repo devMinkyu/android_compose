@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApp()
+            Text(text = "Home")
         }
     }
 }
@@ -50,17 +50,17 @@ fun Home(navController: NavController) {
 
 @Composable
 fun Review(navController: NavController) {
-    Text(text = "Home")
+    Text(text = "Review")
 }
 
 @Composable
 fun Pocket(navController: NavController) {
-    Text(text = "Home")
+    Text(text = "Pocket")
 }
 
 @Composable
 fun Report(navController: NavController) {
-    Text(text = "Home")
+    Text(text = "Report")
 }
 
 @Composable
