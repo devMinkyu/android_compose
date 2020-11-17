@@ -1,12 +1,8 @@
-package com.example.mycompose.presentaion.screen
+package com.example.mycompose.presentation.screen
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Icon
-import androidx.compose.foundation.Text
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Scaffold
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.stringResource
@@ -14,14 +10,16 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import androidx.ui.tooling.preview.Preview
-import com.example.mycompose.presentaion.screen.common.Screen
-import com.example.mycompose.presentaion.ui.MyComposeTheme
+import com.example.mycompose.presentation.screen.common.Screen
+import com.example.mycompose.presentation.ui.MyComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Text(text = "Home")
+            Text(text ="Home")
         }
     }
 }

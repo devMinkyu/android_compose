@@ -1,4 +1,4 @@
-package com.example.mycompose.presentaion.screen.common
+package com.example.mycompose.presentation.screen.common
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons

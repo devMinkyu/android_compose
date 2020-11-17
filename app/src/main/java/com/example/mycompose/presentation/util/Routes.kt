@@ -1,9 +1,4 @@
-package com.example.mycompose.presentaion.util
-
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
+package com.example.mycompose.presentation.util
 
 
 /// https://developer.android.com/jetpack/compose/navigation
