@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.mycompose">
+    package="com.tag_hive.saathi.saathi">
 
     <application
-        android:name=".presentation.screen.common.App"
+        android:name="com.tag_hive.saathi.saathi.presentation.screen.common.App"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,7 +15,7 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".presentation.screen.MainActivity"
+            android:name="com.tag_hive.saathi.saathi.presentation.screen.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyCompose.NoActionBar">
             <intent-filter>
