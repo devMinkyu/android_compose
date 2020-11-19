@@ -1,10 +1,12 @@
 package com.tag_hive.saathi.saathi.ioc.module.provider
 
-import com.tag_hive.saathi.saathi.data.http.AuthApi
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.tag_hive.saathi.saathi.common.Constants
+import com.tag_hive.saathi.saathi.common.ServerConfig
+import com.tag_hive.saathi.saathi.data.http.AuthApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +21,7 @@ import javax.inject.Singleton
 @Suppress("unused")
 @Module
 @InstallIn(ApplicationComponent::class)
-class NetworkProviderModule{
+class NetworkProviderModule {
     @Provides
     @Singleton
     internal fun provideRemoteAuth(
@@ -41,11 +43,11 @@ class NetworkProviderModule{
             .addNetworkInterceptor(StethoInterceptor())
             .build()
 
-        val baseUrl = ""
+        val serverConfig = if(Constants.sRealMode) ServerConfig.RealServerConfig else ServerConfig.DevServerConfig
 
         return Retrofit.Builder()
             .client(remoteClient)
-            .baseUrl(baseUrl)
+            .baseUrl(serverConfig.baseApiUrl)
             .addConverterFactory(moshiConverterFactory)
             .addCallAdapterFactory(FlowCallAdapterFactory.create())
             .build()

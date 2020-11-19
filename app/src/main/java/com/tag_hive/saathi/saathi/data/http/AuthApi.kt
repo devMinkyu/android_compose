@@ -1,32 +1,35 @@
 package com.tag_hive.saathi.saathi.data.http
 
 import androidx.annotation.Keep
+import com.tag_hive.saathi.saathi.entity.*
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.QueryMap
-import retrofit2.http.Url
+import retrofit2.http.*
 
 @Keep
 interface AuthApi {
-    @GET
-    fun get(
-        @Url url: String,
-        @QueryMap options: Map<String, String>,
-    ): Flow<Response<Any>>
+    @POST("signUp")
+    fun signUp(@Body body: SignUpBody): Flow<Response<TagHiveSaathiApiAuth>>
 
-//    @POST
-//    fun post(
-//        @Url url: String,
-//        @PartMap params: Map<String, @JvmSuppressWildcards RequestBody>,
-//    ): Completable
-//
-//    @PUT
-//    fun put(
-//        @Url url: String,
-//        @PartMap params: Map<String, @JvmSuppressWildcards RequestBody>,
-//    ): Completable
-//
-//    @DELETE
-//    fun delete(@Url url: String): Completable
+    @POST("updateUser")
+    fun updateUser(@Body body: UpdateUserBody): Flow<Response<TagHiveApiOperationSuccess>>
+
+    @POST("updateUserFcmToken")
+    fun updateFcmToken(@Body body: UpdateFcmTokenUserBody): Flow<Response<TagHiveApiOperationSuccess>>
+
+    @POST("signIn")
+    fun signIn(@Body body: SignInBody
+    ): Flow<Response<TagHiveSaathiApiAuth>>
+
+    @POST("google_sign_in")
+    fun googleSignIn(
+        @Header("Accept-Version") version:String,
+        @Body body: GoogleSignInBody
+    ): Flow<Response<TagHiveSaathiApiAuth>>
+
+    @POST("google_sign_up")
+    fun googleSignUp(
+        @Header("Accept-Version") version:String,
+        @Body body: GoogleOAuthSignUp
+    ): Flow<Response<TagHiveSaathiApiAuth>>
 }

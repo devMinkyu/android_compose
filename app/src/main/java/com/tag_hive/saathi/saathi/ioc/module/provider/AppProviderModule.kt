@@ -13,7 +13,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 @Module(
     includes =
     [
-        NetworkProviderModule::class
+        NetworkProviderModule::class, AppBinderModule::class
     ]
 )
 @InstallIn(ApplicationComponent::class)
